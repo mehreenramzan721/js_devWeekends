@@ -18,7 +18,7 @@ const newStringOne = "   mehreen    "
 console.log(newStringOne)     // "   mehreen    "
 console.log(newStringOne.trim())  // "mehreen" → removes both-side spaces
 
-const url = "https://hitesh.com/hitesh%20choudhary"
+const url = "https://mehreen.com/mehreen%20ramzan"
 console.log(url.replace('%20','-'))   // replaces %20 with -
 console.log(url.includes('ali')) // false → 'ali' not in url
 console.log(gameName.split('-'))    // ['ali','hc', 'com'] → splits by '-'
