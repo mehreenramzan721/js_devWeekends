@@ -25,3 +25,26 @@ coding.forEach((value,index,array)=>{
 [ 'js', 'c++', 'rubie', 'python' ] rubie 2
 [ 'js', 'c++', 'rubie', 'python' ] python 3
  */
+
+let arrayObj=[
+    {
+        name:"ALi",
+        age: 16
+    },
+    {
+        name: "ALishba",
+        age: 17
+    },{
+        name: "Mehreen",
+        age: 19
+    }
+]
+
+
+arrayObj.forEach((item)=>{
+    console.log(item)
+})
+/*{ name: 'ALi', age: 16 }
+{ name: 'ALishba', age: 17 }
+{ name: 'Mehreen', age: 19 }
+ */
