@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body style="background-color: #212121">
+  
+
+</body>
+<script>
+    const requestUrl= "https://api.github.com/users/mehreenramzan721"
+    const xhr=new XMLHttpRequest();
+    xhr.open('Get',requestUrl);// but here we will not be able to send the api for this we have to use:
+    console.log("hi")
+    xhr.onreadystatechange  = function() {
+        console.log(xhr.readyState);
+        if(xhr.readyState== 4){
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.followers);
+        }
+
+    }
+    xhr.send();// now the api has been sent
+
+</script>
+</html>
