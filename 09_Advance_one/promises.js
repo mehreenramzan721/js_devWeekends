@@ -56,17 +56,17 @@
 // }).finally(()=> console.log("The promise is either resolved or rejected"))
 
 
-const promiseFive = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        let error = true 
-        // let error = false
-        if(! error){
-            resolve({username:"Mehr",password : " 123"})
-        }else{
-            reject("Error : something went wrong ")
-        }
-    },1000)
-})
+// const promiseFive = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let error = true 
+//         // let error = false
+//         if(! error){
+//             resolve({username:"Mehr",password : " 123"})
+//         }else{
+//             reject("Error : something went wrong ")
+//         }
+//     },1000)
+// })
 
 // async function consumePromiseFive( ){
 //     // await promiseFive( )
@@ -85,9 +85,40 @@ const promiseFive = new Promise(function(resolve, reject){
 // consumePromiseFive()
 
 
-async function getAllusers (){
-    const response= await fetch("https://jsonplaceholder.typicode.com/users")
-    const data= response.json()
-    console.log(data)
-}
-getAllusers()
+// async function getAllusers (){
+//     const response= await fetch("https://jsonplaceholder.typicode.com/users")
+//     const data= response.json()
+//     console.log(data)
+// }
+// getAllusers()
+
+// async function getAllusers (){
+//     try{
+//     const response= await fetch("https://jsonplaceholder.typicode.com/users")
+//     const data= await response.json()
+//     console.log(data)
+//     }catch( error){
+//         console.log("E: ", error)
+//     }
+// }
+// getAllusers()
+
+
+
+fetch('https://api.github.com/users/hiteshchoudhary')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => console.log(error))
+
+// syntax of promise . all
+Promise.all([promise1, promise2, promise3])
+.then((results) => {
+console.log(results) // array of all 3 results
+})
+.catch((error) => {
+console.log(error) // if ANY one fails, whole thing fails
+})
