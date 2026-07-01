@@ -25,3 +25,8 @@ const chai= new Teacher('chai', 'chai@ggmail.com', ' 123')
 console.log(chai.addCourse())
 //New course is added by chai
 
+const masalaChai = new User("Masala Chai")
+console.log(masalaChai.logMe())
+
+console.log(chai== masalaChai)//false
+console.log(chai instanceof Teacher)// true 
