@@ -15,5 +15,13 @@ class Teacher extends User{
         this.password = password;
         
     }
+
+    addCourse(){
+        return `New course is added by ${this.username}`
+    }
 }
+
+const chai= new Teacher('chai', 'chai@ggmail.com', ' 123')
+console.log(chai.addCourse())
+//New course is added by chai
 
