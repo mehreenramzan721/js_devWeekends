@@ -14,7 +14,10 @@
 const chai = {
     name: "ginger chai",
     price: 250,
-    isAvailable: true
+    isAvailable: true,
+    orderChai: function(){
+        console.log("Chai nahi bni");
+    }
 }
 // console.log(chai)
 /*
@@ -23,4 +26,52 @@ const chai = {
 */
 
 
-console.log(Object.getOwnPropertydescriptor(chai))
+// console.log(Object.getOwnPropertyDescriptor(chai,"name"))
+/*
+{
+  value: 'ginger chai',
+  writable: true,
+  enumerable: true,
+  configurable: true
+}*/
+
+Object.defineProperty(chai,"name",{
+    writable :false,
+    enumerable : false
+})
+
+// console.log(Object.getOwnPropertyDescriptor(chai,"name"))
+/*
+{
+  value: 'ginger chai',
+  writable: false,
+  enumerable: false,
+  configurable: true
+}*/
+
+// for (let[key,value] of chai) {
+//     console.log(`${key}: ${value}`)
+// }//TypeError: chai is not iterable
+// for (let[key,value] of Object.entries(chai)) {
+//     console.log(`${key}: ${value}`)
+// }
+// price: 250
+// isAvailable: true
+
+// we try to add a function within our chai object
+// for (let[key,value] of Object.entries(chai)) {
+//     console.log(`${key}: ${value}`)
+// }
+/*price: 250
+isAvailable: true
+orderChai: function(){
+        console.log("Chai nahi bni");
+    }
+*/
+
+for (let[key,value] of Object.entries(chai)) {
+    if(typeof value!== 'function'){
+    console.log(`${key}: ${value}`)
+    }
+}
+
